@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
+    background: linear-gradient(
+        -110deg, 
+        #1A4D2E  55%,  /* Dirty white at 30% */
+        #F5EFE6 45%   /* Dark green starts from 30% */
+    
+      );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.logo{
+    flex: 1; /* Take half of the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: transparent; /* Inherits white background from gradient */
+    height: 100vh;
+}
+img{
+    display: block;
+    width: 60%;
+    height: auto;
+}
+.slogan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1A4D2E;
+}
+.login-form {
+    flex: 1; /* Take half of the available space */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: transparent; /* Inherits green background from gradient */
+  }
+.login-input{
+    background: white; /* White form background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.login-input input {
+    display: block;
+    width: 100%;
+    margin: 10px 0 10px;
+    font-size: 14px;
+}
+.login-input button {
+    width: 100%;
+    padding: 10px;
+    background: #1A4D2E; /* Match green color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
