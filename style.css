@@ -1,66 +1,141 @@
-*{
-    padding: 0;
-    margin: auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-body{
-    display: flex;
-    flex-direction: row; /* Stack items vertically */
-    background: linear-gradient(
-        -110deg, 
-        #1A4D2E  55%,  /* Dirty white at 30% */
-        #F5EFE6 45%   /* Dark green starts from 30% */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
     
-      );
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+* {
+  padding: 0;
+  margin: auto;
+  box-sizing: border-box;
 }
-.logo{
-    flex: 1; /* Take half of the available space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background: transparent; /* Inherits white background from gradient */
-    height: 100vh;
+
+:root {
+  --bg-green-color: #1A4D2E;
+  --bg-dirtywhite-color: #F5EFE6;
+  --text-color: white;
+  --font-poppins: "Poppins", sans-serif;
 }
-img{
-    display: block;
-    width: 60%;
-    height: auto;
+
+.parent-div {
+  display: flex;
+  width: 100%;
+  height: 100vh;
 }
-.slogan{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1A4D2E;
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(-110deg, var(--bg-green-color) 55%, var(--bg-dirtywhite-color) 45%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--font-poppins);
 }
+
+.logo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.logo img {
+  display: block;
+  width: 70%;
+  height: auto;
+}
+
+.slogan {
+  text-align: center;
+  color: #1A4D2E;
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
 .login-form {
-    flex: 1; /* Take half of the available space */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background: transparent; /* Inherits green background from gradient */
-  }
-.login-input{
-    background: white; /* White form background */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
+
+.login-form h1 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--bg-green-color);
+}
+
+.login-input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.login-input i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 1.2rem;
+}
+
 .login-input input {
-    display: block;
-    width: 100%;
-    margin: 10px 0 10px;
-    font-size: 14px;
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #e8e8e8;
+  font-size: 14px;
+  font-family: var(--font-poppins);
+  outline: none;
 }
-.login-input button {
-    width: 100%;
-    padding: 10px;
-    background: #1A4D2E; /* Match green color */
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+.login-input input:focus {
+  border-color: var(--bg-green-color);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 40px;
+  padding: 10px;
+  background: var(--bg-green-color);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out
+}
+
+.submit-btn:hover {
+  background-color: var(--bg-green-color);
+  font-size: 18px;
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .parent-div {
+      flex-direction: column;
+    }
+  
+    .logo {
+      width: 0%;
+      height: auto;
+    }
+    .login-container {
+        width: 100%;
+        height: auto;
+        transform: translateY(-50%);
+      }
+  
+    .logo img {
+      width: 80%;
+    }
   }
